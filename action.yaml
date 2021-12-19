@@ -1,29 +1,29 @@
 name: 'Branch Protection Bot'
 description: 'An action to modify branch protection settings'
-inputs:
-  token:
-    description: 'Github token to use'
-    required: true
-  set-include-admins:
-    description: 'Boolean, if true the action will set `include admins` on the branch protection rule'
-    required: false
-    default: 'true'
-  include-admins:
-    description: 'Boolean, if true the action will set `include admins` to true on the branch protection rule, else it will set `include admins` to false'
-    required: false
-    default: 'false'
-  owner:
-    description: 'Repo owner'
-    required: false
-    default: '${{ github.event.repository.owner }}'
-  repo:
-    description: 'Github repo name'
-    required: false
-    default: '${{ github.event.repository.name }}'
-  branch:
-    description: 'Branch change branch protection rules for'
-    required: false
-    default: '${{ github.ref }}'
+#inputs:
+#  token:
+#    description: 'Github token to use'
+#    required: true
+#  set-include-admins:
+#    description: 'Boolean, if true the action will set `include admins` on the branch protection rule'
+#    required: false
+#    default: 'true'
+#  include-admins:
+#    description: 'Boolean, if true the action will set `include admins` to true on the branch protection rule, else it will set `include admins` to false'
+#    required: false
+#    default: 'false'
+#  owner:
+#    description: 'Repo owner'
+#    required: false
+#    default: '${{ github.event.repository.owner }}'
+#  repo:
+#    description: 'Github repo name'
+#    required: false
+#    default: '${{ github.event.repository.name }}'
+#  branch:
+#    description: 'Branch change branch protection rules for'
+#    required: false
+#    default: '${{ github.ref }}'
 runs:
   using: 'node16'
   main: 'index.js'
