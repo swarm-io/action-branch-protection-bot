@@ -15,3 +15,4 @@ jobs:
       - uses: swarm-io/action-release-action@v1
         with:
           token: ${{ secrets.GIT_RUNNER_TOKEN }}
+          release-config: ${{ secrets.JS_ACTION_RELEASE_CONFIG }}
