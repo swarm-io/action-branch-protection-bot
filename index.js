@@ -4,12 +4,17 @@ const {Octokit} = require("@octokit/rest");
 
 try {
     core.info("testing")
-    // const token = core.getInput('token')
-    // const setIncludeAdmins = core.getBooleanInput('set-include-admins')
-    // const includeAdmins = core.getBooleanInput('include-admins')
-    // const owner = core.getInput('owner')
-    // const repo = core.getInput('repo')
-    // const branch = core.getInput('branch')
+    const token = core.getInput('token')
+    const setIncludeAdmins = core.getBooleanInput('set-include-admins')
+    const includeAdmins = core.getBooleanInput('include-admins')
+    const owner = core.getInput('owner')
+    const repo = core.getInput('repo')
+    const branch = core.getInput('branch')
+    core.info(`setIncludeAdmins is ${setIncludeAdmins}`)
+    core.info(`includeAdmins is ${includeAdmins}`)
+    core.info(`owner is ${owner}`)
+    core.info(`repo is ${repo}`)
+    core.info(`branch is ${branch}`)
     // const octokit = new Octokit({
     //     auth: token,
     // });
