@@ -15,33 +15,35 @@ try {
     core.info(`owner is ${owner}`)
     core.info(`repo is ${repo}`)
     core.info(`branch is ${branch}`)
-    // const octokit = new Octokit({
-    //     auth: token,
-    // });
-    // if (setIncludeAdmins) {
-    //     const params = {
-    //         owner,
-    //         repo,
-    //         branch
-    //     }
-    //     if (includeAdmins) {
-    //         octokit.rest.repos.setAdminBranchProtection(params)
-    //             .then(() => {
-    //                 core.info("Enabled include admins setting")
-    //             }).catch(error => {
-    //                 core.error(`Error encountered attempting to enable include admins setting`)
-    //                 core.setFailed(error)
-    //         });
-    //     } else {
-    //         octokit.rest.repos.deleteAdminBranchProtection(params)
-    //             .then(() => {
-    //                 core.info("Disabled include admins setting")
-    //             }).catch(error => {
-    //             core.error(`Error encountered attempting to disable include admins setting`)
-    //             core.setFailed(error)
-    //         });
-    //     }
-    // }
+    const octokit = new Octokit({
+        auth: token,
+    });
+    if (setIncludeAdmins === true) {
+        const params = {
+            owner,
+            repo,
+            branch
+        }
+        if (includeAdmins === true) {
+            core.info('would set include admins to true')
+            // octokit.rest.repos.setAdminBranchProtection(params)
+            //     .then(() => {
+            //         core.info("Enabled include admins setting")
+            //     }).catch(error => {
+            //         core.error(`Error encountered attempting to enable include admins setting`)
+            //         core.setFailed(error)
+            // });
+        } else if (includeAdmins === false) {
+            core.info('would set include admins to false')
+            // octokit.rest.repos.deleteAdminBranchProtection(params)
+            //     .then(() => {
+            //         core.info("Disabled include admins setting")
+            //     }).catch(error => {
+            //     core.error(`Error encountered attempting to disable include admins setting`)
+            //     core.setFailed(error)
+            // });
+        }
+    }
 } catch (error) {
     core.setFailed(error)
 }
