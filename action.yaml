@@ -1,9 +1,9 @@
 name: 'Branch Protection Bot'
 description: 'An action to modify branch protection settings'
-#inputs:
-#  token:
-#    description: 'Github token to use'
-#    required: true
+inputs:
+  token:
+    description: 'Github token to use'
+    required: true
 #  set-include-admins:
 #    description: 'Boolean, if true the action will set `include admins` on the branch protection rule'
 #    required: false
