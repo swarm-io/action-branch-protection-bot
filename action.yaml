@@ -1,4 +1,4 @@
-name: 'Branch Protection Bot' #
+name: 'Branch Protection Bot'
 description: 'An action to modify branch protection settings'
 inputs:
   token:
