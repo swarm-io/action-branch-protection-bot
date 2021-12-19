@@ -21,8 +21,7 @@
   "dependencies": {
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",
-    "@octokit/rest": "^18.12.0",
-    "lodash": "^4.17.21"
+    "@octokit/rest": "^18.12.0"
   },
   "devDependencies": {
     "husky": "^7.0.0"
