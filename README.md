@@ -21,7 +21,7 @@ jobs:
     name: A job to say hello
     steps:
       - uses: actions/checkout@v2
-      - uses: swarm-io/action-branch-protection-bot@init
+      - uses: swarm-io/action-branch-protection-bot@v1
         with:
           token: ${{ secrets.GIT_RUNNER_TOKEN }}
           include-admins: false
