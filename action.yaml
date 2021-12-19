@@ -1,21 +1,29 @@
-name: 'Hello World' # taken from https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
-description: 'Greet someone'
+name: 'Branch Protection Bot'
+description: 'An action to modify branch protection settings'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  token:
+    description: 'Github token to use'
     required: true
-    default: 'World'
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
+  set-include-admins:
+    description: 'Boolean, if true the action will set `include admins` on the branch protection rule'
+    required: false
+    default: true
+  include-admins:
+    description: 'Boolean, if true the action will set `include admins` to true on the branch protection rule, else it will set `include admins` to false'
+    required: false
+    default: false
+  owner:
+    description: 'Repo owner'
+    required: false
+    default: '${{ github.repository_owner }}'
+  repo:
+    description: 'Github repo name'
+    required: false
+    default: '${{ github.event.repository.name }}'
+  branch:
+    description: 'Branch change branch protection rules for'
+    required: false
+    default: '${{ github.ref }}'
 runs:
-  using: "composite"
-  steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
-      shell: bash
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
-      shell: bash
-    - run: ${{ github.action_path }}/goodbye.sh
-      shell: bash
+  using: 'node16'
+  main: 'index.js'

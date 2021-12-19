@@ -1,0 +1,29 @@
+{
+  "name": "action-branch-protection-bot",
+  "version": "1.0.0",
+  "description": "An action to modify branch protection settings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swarm-io/action-branch-protection-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swarm-io/action-branch-protection-bot/issues"
+  },
+  "homepage": "https://github.com/swarm-io/action-branch-protection-bot#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
+    "@octokit/rest": "^18.12.0"
+  },
+  "devDependencies": {
+    "husky": "^7.0.0"
+  }
+}
