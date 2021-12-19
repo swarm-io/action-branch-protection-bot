@@ -8,10 +8,10 @@ inputs:
     description: 'Boolean, if true the action will set `include admins` on the branch protection rule'
     required: false
     default: 'true'
-#  include-admins:
-#    description: 'Boolean, if true the action will set `include admins` to true on the branch protection rule, else it will set `include admins` to false'
-#    required: false
-#    default: 'false'
+  include-admins:
+    description: 'Boolean, if true the action will set `include admins` to true on the branch protection rule, else it will set `include admins` to false'
+    required: false
+    default: 'false'
 #  owner:
 #    description: 'Repo owner'
 #    required: false
