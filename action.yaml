@@ -15,7 +15,7 @@ inputs:
   owner:
     description: 'Repo owner'
     required: false
-    default: '${{ github.event.repository.owner }}'
+    default: 'derp'
 #  repo:
 #    description: 'Github repo name'
 #    required: false
