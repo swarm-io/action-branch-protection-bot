@@ -4,7 +4,8 @@
   "description": "<!-- start title --> <!-- end title --> <!-- start description --> <!-- end description --> <!-- start contents --> <!-- end contents --> <!-- start usage --> <!-- end usage --> <!-- start inputs --> <!-- end inputs --> <!-- start outputs --> <!-- end outputs --> <!-- start examples --> ### Example usage ```yaml on: [push]",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",
     "@octokit/rest": "^18.12.0"
+  },
+  "devDependencies": {
+    "husky": "^7.0.0"
   }
 }
