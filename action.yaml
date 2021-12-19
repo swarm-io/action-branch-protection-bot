@@ -1,5 +1,5 @@
-name: 'Hello World' # taken from https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
-description: 'Greet someone'
+name: 'Branch Protection Bot'
+description: 'An action to modify branch protection settings'
 inputs:
   token:
     description: 'Github token to use'
