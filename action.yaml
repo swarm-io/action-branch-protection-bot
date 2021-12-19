@@ -15,15 +15,15 @@ inputs:
   owner:
     description: 'Repo owner'
     required: false
-    default: ${{ github.event.repository.owner }}
+    default: '${{ github.event.repository.owner }}'
   repo:
     description: 'Github repo name'
     required: false
-    default: ${{ github.event.repository.name }}
+    default: '${{ github.event.repository.name }}'
   branch:
     description: 'Branch change branch protection rules for'
     required: false
-    default: ${{ github.ref }}
+    default: '${{ github.ref }}'
 runs:
   using: node16
   main: index.js
