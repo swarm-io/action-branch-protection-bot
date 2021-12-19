@@ -11,7 +11,7 @@
 <!-- start outputs -->
 <!-- end outputs -->
 <!-- start examples -->
-### Example usage
+### Example usage to make a commit to a protected branch and always re-enable include admins
 ```yaml
 on: [push]
 
@@ -21,12 +21,18 @@ jobs:
     name: A job to say hello
     steps:
       - uses: actions/checkout@v2
-      - id: foo
-        uses: actions/hello-world-composite-action@v1
+      - uses: swarm-io/action-branch-protection-bot@init
         with:
-          who-to-greet: 'Mona the Octocat'
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash
+          token: ${{ secrets.GIT_RUNNER_TOKEN }}
+          include-admins: false
+      - run: |
+          echo "hello" >> hello.txt
+      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: swarm-io/action-branch-protection-bot@init
+        if: always()  # Force to always run this step to ensure "include administrators" is always turned back on
+        with:
+          token: ${{ secrets.GIT_RUNNER_TOKEN }}
+          include-admins: true
 ```
 <!-- end examples -->
 <!-- start [.github/ghdocs/examples/] -->
